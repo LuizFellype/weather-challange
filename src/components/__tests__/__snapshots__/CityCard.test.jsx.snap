@@ -9,13 +9,11 @@ exports[`CityCard temperature color coding should render blue for 5°C or below 
       class="w-60 transition duration-500 ease-in-out transform bg-white rounded-lg hover:scale-105 cursor-pointer border flex flex-col justify-center items-center text-center p-6"
     >
       <div
-        class="text-md flex flex-col text-gray-900"
+        class="text-md flex flex-col text-gray-900 mb-2"
       >
         <span
           class="uppercase font-bold"
-        >
-          City 1
-        </span>
+        />
       </div>
       <div
         class="flex gap-1"
@@ -77,13 +75,11 @@ exports[`CityCard temperature color coding should render orange for temperature 
       class="w-60 transition duration-500 ease-in-out transform bg-white rounded-lg hover:scale-105 cursor-pointer border flex flex-col justify-center items-center text-center p-6"
     >
       <div
-        class="text-md flex flex-col text-gray-900"
+        class="text-md flex flex-col text-gray-900 mb-2"
       >
         <span
           class="uppercase font-bold"
-        >
-          City 2
-        </span>
+        />
       </div>
       <div
         class="flex gap-1"
@@ -145,13 +141,11 @@ exports[`CityCard temperature color coding should render red for temperature abo
       class="w-60 transition duration-500 ease-in-out transform bg-white rounded-lg hover:scale-105 cursor-pointer border flex flex-col justify-center items-center text-center p-6"
     >
       <div
-        class="text-md flex flex-col text-gray-900"
+        class="text-md flex flex-col text-gray-900 mb-2"
       >
         <span
           class="uppercase font-bold"
-        >
-          City 3
-        </span>
+        />
       </div>
       <div
         class="flex gap-1"
