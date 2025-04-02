@@ -14,7 +14,7 @@ const Urubici = { lat: -28.0046466, lon: -49.6054824, name: 'Urubici' }
 export const getAllCitiesWeather = async () => {
   try {
     const allCitiesWeather = await Promise.all([getCityWeather(Joinville), getCityWeather(SanFrancisco), getCityWeather(Urubici)])
-    console.log('allCitiesWeather', allCitiesWeather)
+    
     return allCitiesWeather;
 
   } catch (e) {

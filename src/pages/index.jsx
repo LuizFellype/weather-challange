@@ -6,21 +6,28 @@ import { getAllCitiesWeather } from "@/lib/db";
 
 import { styles } from "@/styles";
 import { config } from "@/config";
+import { RefreshPage } from "@/components/RefreshPage";
+
+const revalidateInMinutes = 10
 
 const Home = ({
   weather,
 }) => {
   return (
-    <div className={styles.homeWrapper}>
-      <h1 className={styles.h1}>{config.title}</h1>
-      <p className={styles.description}>{config.description}</p>
+    <>
+      <RefreshPage intervalInMinutes={revalidateInMinutes} /> 
 
-      <ol className="list-decimal space-y-1">
-        {weather?.map((cityData) => (
-          <CityCard key={`${cityData.lat}_${cityData.lon}`} data={cityData}/>
-        ))}
-      </ol>
-    </div>
+      <div className={styles.homeWrapper}>
+        <h1 className={styles.h1}>{config.title}</h1>
+        <p className={styles.description}>{config.description}</p>
+
+        <ol className="list-decimal space-y-1">
+          {weather?.map((cityData) => (
+            <CityCard key={`${cityData.lat}_${cityData.lon}`} data={cityData} />
+          ))}
+        </ol>
+      </div>
+    </>
   );
 };
 
@@ -31,6 +38,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { weather },
-    revalidate: 60 * 10,
+    revalidate: 60 * revalidateInMinutes,
   };
 };
