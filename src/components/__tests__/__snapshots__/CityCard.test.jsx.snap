@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityCard temperature color coding should render blue for 5°C or below temperature 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`CityCard temperature color coding should render orange for temperature between 5°C and 26°C 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`CityCard temperature color coding should render red for temperature above 25°C 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
