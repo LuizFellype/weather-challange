@@ -29,6 +29,12 @@ First, install dependencies:
 npm i
 ```
 
+Create account and set up plan to generate and copy the secrect key.
+Create `.env.local` file on root project, assign the API KEY to this variable:
+`WEATHER_API_KEY="API_KEY"`
+
+ps.: If you don't want to, you could replace the return value of `getAllCitiesWeather` function to return the mock `allWeathers` from `mock-db/weather`.
+
 To run the development server:
 
 ```bash
