@@ -2,7 +2,7 @@ import * as React from "react";
 
 import CityCard from "@/components/CityCard";
 
-import { getAllCitiesWeather } from "@/lib/db";
+import { getAllCitiesWeather } from "@/services/getAllCitiesWeather";
 
 import { styles } from "@/styles";
 import { config } from "@/config";
