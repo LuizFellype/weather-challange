@@ -1,38 +1,6 @@
 import * as React from "react";
-
-const WeatherInfo = ({ label, value, className = '' }) => {
-  return (
-    <div className={`flex flex-col items-center p-1 rounded-lg ${className}`}>
-      <span className="text-xs text-gray-900">{label}</span>
-      <span className="text-base font-bold text-gray-900">{value}</span>
-    </div>
-  )
-}
-
-const blue = 'bg-sky-500/20'
-const orange = 'bg-orange-500/20'
-const red = 'bg-red-500/20'
-const getTemperatureColorCode = (temp) => {
-  const isBiggerThan5 = temp > 5
-  const isBiggerThan25 = temp > 25
-
-  if (isBiggerThan25) return red
-  if (isBiggerThan5) return orange
-
-  return blue
-}
-
-const normalizeDataToParams = ({ data: {
-  name,
-  current: { temp, pressure, humidity }
-} }) => ({
-  name,
-  temp,
-  temp: `${temp} °C`,
-  pressure,
-  humidity: `${humidity}%`,
-  tempColorCode: getTemperatureColorCode(temp)
-})
+import { normalizeWeatherData } from "./helpers/normalizeWeatherData";
+import { WeatherInfo } from "../WeatherInfo";
 
 const CityCard = ({ 
   name,
@@ -59,7 +27,7 @@ const CityCard = ({
 };
 
 const CityCardWrapper = (props) => {
-  const data = normalizeDataToParams(props)
+  const data = normalizeWeatherData(props)
 
   return <CityCard {...data} />
 };

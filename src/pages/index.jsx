@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import CityCard from "@/components/CityCard";
+import CityCard from "@/components/CityCard/CityCard";
 
 import { getAllCitiesWeather } from "@/services/getAllCitiesWeather";
 
@@ -13,18 +13,25 @@ const revalidateInMinutes = 10
 const Home = ({
   weather,
 }) => {
+
+  const headerTitle = <>
+    <h1 className={styles.h1}>{config.title}</h1>
+    <p className={styles.description}>{config.description}</p>
+  </>
+
+  const weatherList = weather?.map((cityData) => (
+    <CityCard key={`${cityData.lat}_${cityData.lon}`} data={cityData} />
+  ))
+
   return (
     <>
-      <RefreshPage intervalInMinutes={revalidateInMinutes} /> 
+      <RefreshPage intervalInMinutes={revalidateInMinutes} />
 
       <div className={styles.homeWrapper}>
-        <h1 className={styles.h1}>{config.title}</h1>
-        <p className={styles.description}>{config.description}</p>
+        {headerTitle}
 
         <ol className="list-decimal space-y-1">
-          {weather?.map((cityData) => (
-            <CityCard key={`${cityData.lat}_${cityData.lon}`} data={cityData} />
-          ))}
+          {weatherList}
         </ol>
       </div>
     </>

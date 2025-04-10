@@ -1,5 +1,5 @@
 import {render} from '@testing-library/react'
-import CityCard from '../CityCard'
+import CityCard from '../CityCard/CityCard'
 import {allWeathers} from '../../mock-db/weather'
 
 const [lowTempCity, midTempCity, highTempCity] = allWeathers

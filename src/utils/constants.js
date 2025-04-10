@@ -7,3 +7,11 @@ export const CITY = {
     SanFrancisco,
     Urubici
 }
+
+const blue = 'bg-sky-500/20'
+const orange = 'bg-orange-500/20'
+const red = 'bg-red-500/20'
+
+export const TEMPERATURE_COLOR = {
+    blue, orange, red
+}
